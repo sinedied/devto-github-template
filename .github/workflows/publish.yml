@@ -18,8 +18,8 @@ jobs:
       uses: sinedied/publish-devto@v1
       with:
         files_glob: '**/*.md'
-        devto_token: $DEVTO_TOKEN
-        github_token: $GH_TOKEN
+        devto_token: ${{ secrets.DEVTO_TOKEN }}
+        github_token: ${{ secrets.GH_TOKEN }}
         conventional: false
 
 
