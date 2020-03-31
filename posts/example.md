@@ -12,7 +12,7 @@ Some random text with a [link](https://code.visualstudio.com).
 
 ## Serious title
 
-Add some text here and there! ^^
+Add some text here and there! \o/
 
 ![and some pictures](./assets/cat.jpg)
 ![ ](/assets/cat.jpg)
