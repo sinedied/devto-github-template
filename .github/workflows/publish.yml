@@ -17,7 +17,7 @@ jobs:
     - name: Publish articles on dev.to
       uses: sinedied/publish-devto@33cd01f
       with:
-        files_glob: '**/*.md'
+        files_glob: 'posts/**/*.md'
         devto_key: ${{ secrets.DEVTO_TOKEN }}
         github_token: ${{ secrets.GH_TOKEN }}
         conventional: false
