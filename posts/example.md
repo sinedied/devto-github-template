@@ -11,7 +11,7 @@ Some text with a [link](https://code.visualstudio.com).
 
 ## Serious title
 
-And some text.
+And some text here.
 
 ![Alternative text](./assets/cat.png)
 ![ ](/assets/cat.png)

@@ -15,7 +15,7 @@ jobs:
         node-version: 12
 
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@8fe3524
+      uses: sinedied/publish-devto@45cbbc6
       with:
         files_glob: 'posts/**/*.md'
         devto_key: ${{ secrets.DEVTO_TOKEN }}
