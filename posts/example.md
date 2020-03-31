@@ -1,7 +1,7 @@
 ---
 title: Example article title
 published: false
-description: Just a simple test article
+description: A simple test article
 tags: productivity, beginners, test
 cover_image: assets/cat.png
 canonical_url: null
