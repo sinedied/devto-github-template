@@ -1,8 +1,8 @@
 ---
 title: Example article
 published: false
-description: Just a test article
-tags: 'vscode, productivity, beginners'
+description: Just a simple test article
+tags: productivity, beginners, test
 cover_image: assets/cat.png
 canonical_url: null
 ---
