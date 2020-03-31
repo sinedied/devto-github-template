@@ -1,0 +1,26 @@
+name: publish
+on:   
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Publish articles on dev.to
+      uses: sinedied/publish-devto@v1
+      with:
+        files_glob: '**/*.md'
+        devto_token: $DEVTO_TOKEN
+        github_token: $GITHUB_TOKEN
+        conventional: false
+
+
+
