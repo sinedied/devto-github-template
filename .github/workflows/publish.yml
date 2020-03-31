@@ -15,12 +15,12 @@ jobs:
         node-version: 12
 
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@f9fb05e
+      uses: sinedied/publish-devto@ce25232
       with:
         files_glob: 'posts/**/*.md'
         devto_key: ${{ secrets.DEVTO_TOKEN }}
         github_token: ${{ secrets.GH_TOKEN }}
-        conventional: true
+        conventional_commits: true
 
 
 
