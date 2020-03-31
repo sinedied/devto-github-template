@@ -2,9 +2,10 @@
 title: Example article title
 published: false
 description: A simple test article
-tags: productivity, beginners, test
+tags: 'productivity, beginners, test'
 cover_image: assets/cat.png
 canonical_url: null
+id: 295985
 ---
 
 Some text with a [link](https://code.visualstudio.com).
