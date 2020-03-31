@@ -5,6 +5,7 @@ description: A simple test article
 tags: 'productivity, beginners, test'
 cover_image: assets/cat.jpg
 canonical_url: null
+id: 295995
 ---
 
 Some random text with a [link](https://code.visualstudio.com).
