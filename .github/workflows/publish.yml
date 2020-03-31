@@ -19,7 +19,7 @@ jobs:
       with:
         files_glob: '**/*.md'
         devto_token: $DEVTO_TOKEN
-        github_token: $GITHUB_TOKEN
+        github_token: $GH_TOKEN
         conventional: false
 
 
