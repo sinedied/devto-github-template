@@ -6,6 +6,7 @@ tags: 'productivity, beginners, test'
 cover_image: assets/cat.jpg
 canonical_url: null
 id: 295985
+date: '2020-03-31T19:24:36Z'
 ---
 
 Some text with a [link](https://code.visualstudio.com).
