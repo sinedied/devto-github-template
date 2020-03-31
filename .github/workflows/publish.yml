@@ -15,7 +15,8 @@ jobs:
         node-version: 12
 
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@ce25232
+      uses: sinedied/publish-devto@bd00c0c
+      if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
       with:
         files_glob: 'posts/**/*.md'
         devto_key: ${{ secrets.DEVTO_TOKEN }}
