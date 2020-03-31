@@ -1,5 +1,5 @@
 ---
-title: Test article publish
+title: Example article
 published: false
 description: Just a test article
 tags: 'vscode, productivity, beginners'
