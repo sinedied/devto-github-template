@@ -1,27 +1,41 @@
+# This workflow will push and update articles on dev.to each time a new
+# commit is pushed to the main branch.
+#
+# To make it work, you need a dev.to API key, see:
+# https://developers.forem.com/api/#section/Authentication/api_key
+#
+# Once you have generated the token, you need to add them as a secret in your
+# GitHub repository:
+# - DEVTO_TOKEN: your dev.to API key
+# See https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets
+# for more information about GitHub secrets.
+
 name: publish
-on:   
+on:
   push:
-    branches:
-      - master
+    branches: [main]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: 12
+        node-version: 14
 
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@30728bf
+      uses: sinedied/publish-devto@v2
       with:
-        files_glob: 'posts/**/*.md'
+        # The dev.to API key.
+        # See https://developers.forem.com/api/#section/Authentication/api_key
         devto_key: ${{ secrets.DEVTO_TOKEN }}
-        github_token: ${{ secrets.GH_TOKEN }}
+        # The GitHub personal access token, used to create commits for updated files.
+        # If you have a protected branch, you need to create a commit with the
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # (Optional) The files to publish. Default is "posts/**/*.md"
+        files_glob: 'posts/**/*.md'
+        # (Optional) Use conventional commit messages. Default is false.
+        # See https://www.conventionalcommits.org. 
         conventional_commits: true
-
-
-
