@@ -21,10 +21,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 14
-
     - name: Publish articles on dev.to
       uses: sinedied/publish-devto@v2
       with:
