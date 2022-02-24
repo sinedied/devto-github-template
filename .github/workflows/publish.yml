@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@v2
+      uses: sinedied/publish-devto@c591103be079e3e04b7c6e4fcec94a56b786413f
       with:
         # Your dev.to personal API key to publish and update articles.
         # See https://docs.dev.to/api/#section/Authentication/api_key
@@ -39,3 +39,4 @@ jobs:
         # (Optional) Use conventional commit messages. Default is false.
         # See https://www.conventionalcommits.org. 
         conventional_commits: true
+        dry_run: true
