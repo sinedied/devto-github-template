@@ -45,10 +45,6 @@ jobs:
         # (Optional) Do not make actual changes on dev.to if it's a pull request.
         dry_run: ${{ github.event_name == 'pull_request' }}
 
-    - run: |
-        echo ${{ steps.publish_devto.outputs.result_summary_table_json }}
-
-    
     # (Optional) Add comment with dev.to changes if it's a pull request.
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
@@ -57,5 +53,5 @@ jobs:
         body: |
           Changes that will be performed after merge:
           ```
-          ${{ steps.publish_devto.outputs.result_summary_table_json }}
+          ${{ steps.publish_devto.outputs.result_table }}
           ```
