@@ -25,7 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Publish articles on dev.to
       uses: sinedied/publish-devto@c591103be079e3e04b7c6e4fcec94a56b786413f
-      id: publish
+      id: publish_devto
       with:
         # Your dev.to personal API key to publish and update articles.
         # See https://docs.dev.to/api/#section/Authentication/api_key
@@ -44,6 +44,10 @@ jobs:
         conventional_commits: true
         # (Optional) Do not make actual changes on dev.to if it's a pull request.
         dry_run: ${{ github.event_name == 'pull_request' }}
+
+    - run: |
+        echo ${{ steps.publish_devto.outputs.result_summary_table_json }}
+
     
     # (Optional) Add comment with dev.to changes if it's a pull request.
     - uses: actions-ecosystem/action-create-comment@v1
@@ -51,4 +55,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          Results: ${{ join(steps.publish.outputs.*, '\n') }}
+          Changes that will be performed after merge:
+          ```
+          ${{ steps.publish_devto.outputs.result_summary_table_json }}
+          ```
