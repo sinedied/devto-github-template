@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@c591103be079e3e04b7c6e4fcec94a56b786413f
+      uses: sinedied/publish-devto@d77eac8b30cb714c6a3078fa7d7f04a04c208260
       id: publish_devto
       with:
         # Your dev.to personal API key to publish and update articles.
