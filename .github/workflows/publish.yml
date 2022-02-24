@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@d77eac8b30cb714c6a3078fa7d7f04a04c208260
+      uses: sinedied/publish-devto@7ad98309240760ba8723e387f82a34a66728fb58
       id: publish_devto
       with:
         # Your dev.to personal API key to publish and update articles.
@@ -51,7 +51,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          Changes that will be performed after merge:
+          Changes result:
           ```
           ${{ steps.publish_devto.outputs.result_table }}
           ```
