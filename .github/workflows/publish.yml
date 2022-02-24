@@ -25,6 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Publish articles on dev.to
       uses: sinedied/publish-devto@c591103be079e3e04b7c6e4fcec94a56b786413f
+      id: publish
       with:
         # Your dev.to personal API key to publish and update articles.
         # See https://docs.dev.to/api/#section/Authentication/api_key
@@ -41,4 +42,12 @@ jobs:
         # (Optional) Use conventional commit messages. Default is false.
         # See https://www.conventionalcommits.org. 
         conventional_commits: true
+        # (Optional) Do not make actual changes on dev.to if it's a pull request.
         dry_run: ${{ github.event_name == 'pull_request' }}
+    
+    # (Optional) Add comment with dev.to changes if it's a pull request.
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ github.event_name == 'pull_request' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        body: ${{ join(steps.publish.outputs.*, '\n') }}
