@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@774e05d0a01cff8f672861bfbda2372c0bfd13ab
+      uses: sinedied/publish-devto@44e2e19d7dbbdeb5ec6ab44423420a29e94559a1
       id: publish_devto
       with:
         # Your dev.to personal API key to publish and update articles.
@@ -53,5 +53,5 @@ jobs:
         body: |
           Changes result:
           ```
-          ${{ steps.publish_devto.outputs.result_table }}
+          ${{ steps.publish_devto.outputs.result_summary }}
           ```
